@@ -1,8 +1,12 @@
 version: '3.8'
-
 services:
-  app:
+  app-staging:
     build: .
-    container_name: spring-esg
+    container_name: staging-esg
+    ports:
+      - "8081:8080"
+  app-prod:
+    build: .
+    container_name: prod-esg
     ports:
       - "8080:8080"
